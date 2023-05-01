@@ -1,9 +1,12 @@
 import React from 'react';
-import { Col, Row } from 'react-bootstrap';
+import { Card, Col, Row } from 'react-bootstrap';
 import banner1 from '../../assets/banner01.jpg'
 import './Home.css'
+import { useLoaderData } from 'react-router-dom';
+import SingleChef from '../Shared/SingleChef/SingleChef';
 
 const Home = () => {
+    const chefData = useLoaderData()
     return (
         <div className='container'>
             {/* banner section */}
@@ -25,7 +28,9 @@ const Home = () => {
             <section>
                 <h2 className='text-center'>Chef's Section</h2>
                 <hr />
-                
+                <Row xs={1} md={2} lg={3} className="g-4 py-2 mb-2">
+                    {chefData.map(chef => <SingleChef key={chef.id} chef={chef}></SingleChef>)}
+                </Row>
             </section>
         </div>
     );
