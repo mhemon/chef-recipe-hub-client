@@ -1,14 +1,40 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Container, FloatingLabel, Form } from 'react-bootstrap';
 import SocialLogin from '../Shared/SocialLogin/SocialLogin';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../provider/AuthProvider';
+import { updateProfile } from 'firebase/auth';
 
 const Register = () => {
+    const navigate = useNavigate()
     const [error, setError] = useState('')
     const [success, setSuccess] = useState('')
 
-    const handleRegisterBtn = () => {
+    const {createUser} = useContext(AuthContext)
 
+    const handleRegisterBtn = (e) => {
+        e.preventDefault()
+        setError('')
+        setSuccess('')
+        const form = e.target
+        const name = form.name.value
+        const email = form.email.value
+        const password = form.password.value
+        const photoUrl = form.photoUrl.value
+
+        if(password.length < 6){
+            setError("Error : password must be greater than 6")
+            return
+        }
+
+        createUser(email, password)
+        .then(result => {
+            const currentUser = result.user
+            updateProfile(currentUser, {displayName: name, photoURL: photoUrl})
+            .then(navigate('/'))
+            .catch(error => setError(error.code))
+        })
+        .catch(error => setError("Error :-"+error.code))
     }
     return (
         <Container className='mx-auto login-box mb-4'>
@@ -27,11 +53,11 @@ const Register = () => {
                     label="Email"
                     className="mb-3"
                 >
-                    <Form.Control type="email" placeholder="name@example.com" name='email' />
+                    <Form.Control type="email" placeholder="name@example.com" name='email' required/>
                 </FloatingLabel>
 
                 <FloatingLabel controlId="floatingPassword" label="Password" className='mb-3'>
-                    <Form.Control type="password" placeholder="Password" name='password' />
+                    <Form.Control type="password" placeholder="Password" name='password' required/>
                 </FloatingLabel>
 
                 <FloatingLabel
@@ -52,8 +78,8 @@ const Register = () => {
                 <Form.Text className="text-muted text-success">
                     {success}
                 </Form.Text>
-                <Form.Text className="text-muted text-danger">
-                    {error}
+                <Form.Text className="text-danger">
+                    <h4>{error}</h4>
                 </Form.Text>
             </Form>
             {/* social login added here */}

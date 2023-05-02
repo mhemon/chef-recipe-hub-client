@@ -1,14 +1,17 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { Button, FloatingLabel, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Login.css'
 import SocialLogin from '../Shared/SocialLogin/SocialLogin';
+import { AuthContext } from '../../provider/AuthProvider';
 
 const Login = () => {
+    const { loginUser } = useContext(AuthContext)
     const [error, setError] = useState('')
     const [success, setSuccess] = useState('')
-
+    const navigate = useNavigate()
+    
     const handleLoginBtn = (e) => {
         e.preventDefault()
         setError('')
@@ -17,7 +20,9 @@ const Login = () => {
         const email = form.email.value
         const password = form.password.value
 
-        
+        loginUser(email, password)
+        .then(() => navigate('/'))
+        .catch(error => setError(error.code))
     }
 
     return (
@@ -53,7 +58,7 @@ const Login = () => {
             {/* social login added here */}
             <hr />
             <h5 className='text-muted mb-3 text-center'>----------OR----------</h5>
-            <SocialLogin/>
+            <SocialLogin />
         </Container>
     );
 };
