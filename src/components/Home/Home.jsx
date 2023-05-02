@@ -18,8 +18,8 @@ const Home = () => {
                     <Col md={6}>
                         <div className='p-2 px-md-4 py-md-4'>
                             <h3 className='fst-italic'>Biryani specialist</h3>
-                            <h1 className='chef-name text-warning'>David <br /> Parker</h1>
-                            <p className='text-muted justify-text'>David Parker is a Biryani specialist with a passion for creating rich and flavorful dishes. With years of experience in the culinary arts, David has honed his skills to create the perfect balance of spices and textures in his Biryani recipes. His signature dishes are known for their aromatic flavors and mouth-watering appeal.</p>
+                            <h1 className='chef-name text-warning'>Manik <br /> Khan</h1>
+                            <p className='text-muted justify-text'>Manik Khan is a Biryani specialist with a passion for creating rich and flavorful dishes. With years of experience in the culinary arts, Manik has honed his skills to create the perfect balance of spices and textures in his Biryani recipes. His signature dishes are known for their aromatic flavors and mouth-watering appeal.</p>
                         </div>
                     </Col>
                 </Row>
@@ -41,12 +41,12 @@ const Home = () => {
                     <Col>
                         <Card style={{ width: '18rem' }}>
                             <div className='card-img'>
-                                <Card.Img className='img-fluid' variant="top" src="https://images.unsplash.com/photo-1515579171902-e0c5f918b32b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" />
+                                <Card.Img className='img-fluid' variant="top" src="https://images.pexels.com/photos/604660/pexels-photo-604660.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
                             </div>
                             <Card.Body>
-                                <Card.Title>Dark Chocolate Truffles</Card.Title>
+                                <Card.Title>Shami Kebab</Card.Title>
                                 <Card.Text className='text-justify'>
-                                    Indulge in the rich and smooth flavor of our handcrafted dark chocolate truffles, made with the finest ingredients and expertly crafted for perfection.
+                                Shami Kebab is a popular Kebab from Bangladeshi made with ground meat, lentils, and spices. It is typically served as an appetizer or snack.
                                 </Card.Text>
                             </Card.Body>
                         </Card>
@@ -54,12 +54,12 @@ const Home = () => {
                     <Col>
                         <Card style={{ width: '18rem' }}>
                             <div className='card-img'>
-                                <Card.Img className='img-fluid' variant="top" src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80" />
+                                <Card.Img className='img-fluid' variant="top" src="https://images.pexels.com/photos/14846852/pexels-photo-14846852.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
                             </div>
                             <Card.Body>
-                                <Card.Title>Margherita Pizza</Card.Title>
+                                <Card.Title>Chicken Korma</Card.Title>
                                 <Card.Text className='text-justify'>
-                                    Margherita Pizza is a classic Italian pizza made with a tomato sauce base, mozzarella cheese, and fresh basil. Simple yet delicious, it's a timeless favorite.
+                                Chicken Korma is a delicious, mild Bangladeshi dish made with tender chicken cooked in a creamy sauce of yogurt, coconut milk, and aromatic spices.
                                 </Card.Text>
                             </Card.Body>
                         </Card>
@@ -67,12 +67,12 @@ const Home = () => {
                     <Col>
                         <Card style={{ width: '18rem' }}>
                             <div className='card-img'>
-                                <Card.Img className='img-fluid' variant="top" src="https://images.unsplash.com/photo-1619019187211-adf2f6119afd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" />
+                                <Card.Img className='img-fluid' variant="top" src="https://images.unsplash.com/photo-1642821373181-696a54913e93?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" />
                             </div>
                             <Card.Body>
-                                <Card.Title>Chicken Tenders</Card.Title>
+                                <Card.Title>Mutton Tehari</Card.Title>
                                 <Card.Text className='text-justify'>
-                                    Chicken tenders are a popular dish made by breaded and deep-fried strips of chicken. They are crispy on the outside and juicy on the inside, perfect for dipping.
+                                Mutton Tehari is a popular spicy rice dish in Bangladeshi cuisine, consisting of aromatic basmati rice cooked with tender mutton, aromatic spices, and vegetables.
                                 </Card.Text>
                             </Card.Body>
                         </Card>
@@ -90,12 +90,12 @@ const Home = () => {
                         <div className="card mb-3" style={{maxWidth: '540px', height: '190px', overflow: 'hidden'}}>
                             <div className="row g-0">
                                 <div className="col-md-4">
-                                    <img src="https://plus.unsplash.com/premium_photo-1677651865609-a806ad72a7fc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" className="img-fluid rounded-start" alt="..."/>
+                                    <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" className="img-fluid rounded-start" alt="..."/>
                                 </div>
                                 <div className="col-md-8">
                                     <div className="card-body">
-                                        <h5 className="card-title">Pimento Cheese Potato Skins</h5>
-                                        <p className="card-text mb-1">If there's anything better than a loaded baked potato, it's a twice-baked potato stuffed with creamy pimento cheese and crispy bacon bits. Heavenly!</p>
+                                        <h5 className="card-title">Dhaka-style biriyani</h5>
+                                        <p className="card-text mb-1">Dhaka-style biriyani is a spicy, fragrant rice dish made with flavorful spices, meat (usually beef), potatoes, and eggs, and is popular in Bangladesh and beyond.</p>
                                         <p className="card-text"><small className="text-body-secondary">Last updated 3 mins ago</small></p>
                                     </div>
                                 </div>
@@ -106,12 +106,12 @@ const Home = () => {
                         <div className="card mb-3" style={{maxWidth: '540px', height: '190px', overflow: 'hidden'}}>
                             <div className="row g-0">
                                 <div className="col-md-4">
-                                    <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=384&q=80" className="img-fluid rounded-start" alt="..."/>
+                                    <img src="https://www.vegrecipesofindia.com/wp-content/uploads/2021/09/begun-bhaja-1.jpg" className="img-fluid rounded-start" alt="..."/>
                                 </div>
                                 <div className="col-md-8">
                                     <div className="card-body">
-                                        <h5 className="card-title">Zesty Mediterranean Quinoa Salad</h5>
-                                        <p className="card-text mb-1">Zesty Mediterranean quinoa salad is a refreshing dish made with quinoa, cucumbers, cherry tomatoes, feta cheese, and a tangy dressing. It's perfect for summer picnics.</p>
+                                        <h5 className="card-title">Begun Bhaja</h5>
+                                        <p className="card-text mb-1">Begun Bhaja is a popular Bengali dish made by frying thin slices of eggplant until crispy. It is often served as a side dish with rice and dal.</p>
                                         <p className="card-text"><small className="text-body-secondary">Last updated 10 mins ago</small></p>
                                     </div>
                                 </div>
@@ -138,12 +138,12 @@ const Home = () => {
                         <div className="card mb-3" style={{maxWidth: '540px', height: '190px', overflow: 'hidden'}}>
                             <div className="row g-0">
                                 <div className="col-md-4">
-                                    <img src="https://images.unsplash.com/photo-1567620832903-9fc6debc209f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=480&q=80" className="img-fluid rounded-start" alt="..."/>
+                                    <img src="https://images.unsplash.com/photo-1594221708779-94832f4320d1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80" className="img-fluid rounded-start" alt="..."/>
                                 </div>
                                 <div className="col-md-8">
                                     <div className="card-body">
-                                        <h5 className="card-title">Spicy Honey Chicken</h5>
-                                        <p className="card-text mb-1">it is a flavorful and tangy dish made with succulent chicken pieces glazed in a mixture of honey, soy sauce, and hot sauce. It's a perfect balance of sweet and spicy.</p>
+                                        <h5 className="card-title">Chicken roast</h5>
+                                        <p className="card-text mb-1">Chicken roast is a classic dish made by roasting a whole chicken with seasonings and herbs. It's a delicious and comforting meal that's perfect for any occasion.</p>
                                         <p className="card-text"><small className="text-body-secondary">Last updated 10 mins ago</small></p>
                                     </div>
                                 </div>
