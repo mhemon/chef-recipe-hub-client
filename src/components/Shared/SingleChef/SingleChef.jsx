@@ -20,7 +20,7 @@ const SingleChef = ({ chef }) => {
                         <br />
                         Total Likes : {likes}
                     </Card.Text>
-                    <Link><Button variant="warning">View Recepie</Button></Link>
+                    <Link to={`/chef-recipes/${id}`}><Button variant="warning">View Recepie</Button></Link>
                 </Card.Body>
             </Card>
         </Col>
