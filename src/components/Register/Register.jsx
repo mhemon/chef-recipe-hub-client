@@ -31,7 +31,7 @@ const Register = () => {
         .then(result => {
             const currentUser = result.user
             updateProfile(currentUser, {displayName: name, photoURL: photoUrl})
-            .then(navigate('/'))
+            .then(() => navigate('/'))
             .catch(error => setError(error.code))
         })
         .catch(error => setError("Error :-"+error.code))
@@ -49,7 +49,7 @@ const Register = () => {
                 </FloatingLabel>
 
                 <FloatingLabel
-                    controlId="floatingInput"
+                    controlId="floatingInput2"
                     label="Email"
                     className="mb-3"
                 >
@@ -61,7 +61,7 @@ const Register = () => {
                 </FloatingLabel>
 
                 <FloatingLabel
-                    controlId="floatingInput"
+                    controlId="floatingInput3"
                     label="Photo URL"
                     className="mb-3"
                 >

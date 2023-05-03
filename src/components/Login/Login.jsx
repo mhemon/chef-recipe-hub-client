@@ -1,16 +1,20 @@
 import React, { useContext, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { Button, FloatingLabel, Form } from 'react-bootstrap';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Login.css'
 import SocialLogin from '../Shared/SocialLogin/SocialLogin';
 import { AuthContext } from '../../provider/AuthProvider';
 import { toast } from 'react-toastify';
 
 const Login = () => {
+    const location = useLocation()
     const { loginUser, setLoading } = useContext(AuthContext)
     const [error, setError] = useState('')
     const [success, setSuccess] = useState('')
+
+    const from = location.state?.from?.pathname || "/";
+
     const navigate = useNavigate()
     
     const handleLoginBtn = (e) => {
@@ -22,7 +26,7 @@ const Login = () => {
         const password = form.password.value
 
         loginUser(email, password)
-        .then(() => navigate('/'))
+        .then(() => navigate(from))
         .catch(error => {
             setLoading(false)
             setError("Error: "+error.code)

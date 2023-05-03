@@ -6,6 +6,7 @@ import Login from "../components/Login/Login";
 import ChefRecipes from "../components/ChefRecipes/ChefRecipes";
 import Register from "../components/Register/Register";
 import ErrorPage from "../components/Shared/ErrorPage/ErrorPage";
+import PrivateRecipe from "../private/PrivateRecipe";
 
 export const router = createBrowserRouter([
     {
@@ -16,7 +17,7 @@ export const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home/>,
-                loader: () => fetch('http://localhost:5000')
+                loader: () => fetch('https://chef-recipe-hub-server.vercel.app')
             },
             {
                 path: '/blog',
@@ -32,8 +33,8 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/chef-recipes/:id',
-                element: <ChefRecipes/>,
-                loader: ({params}) => fetch(`http://localhost:5000/${params.id}`)
+                element: <PrivateRecipe><ChefRecipes/></PrivateRecipe>,
+                loader: ({params}) => fetch(`https://chef-recipe-hub-server.vercel.app/${params.id}`)
             }
         ]
     },

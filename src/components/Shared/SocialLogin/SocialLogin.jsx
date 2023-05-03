@@ -2,23 +2,27 @@ import React, { useContext } from 'react';
 import { Button } from 'react-bootstrap';
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { AuthContext } from '../../../provider/AuthProvider';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const SocialLogin = () => {
+
+    const location = useLocation()
+
+    const from = location.state?.from?.pathname || "/";
 
     const navigate = useNavigate()
     const { googleLogin, githubLogin } = useContext(AuthContext)
 
     const handleGoogleBtn = () => {
         googleLogin()
-        .then(() => navigate('/'))
+        .then(() => navigate(from))
         .catch(error => toast.error(error.code))
     }
 
     const handleGithubBtn = () => {
         githubLogin()
-        .then(() => navigate('/'))
+        .then(() => navigate(from))
         .catch(error => toast.error(error.code))
     }
     return (
