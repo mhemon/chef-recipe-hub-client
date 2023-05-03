@@ -3,10 +3,16 @@ import { Button, Card, Col } from 'react-bootstrap';
 import { Rating } from '@smastrom/react-rating';
 import { Link } from 'react-router-dom';
 import { FaHeart } from "react-icons/fa";
+import { toast } from 'react-toastify';
 
 const SingleRecipe = ({ singleRecipe }) => {
     const [visible, setVisible] = useState(true)
     const { recipeName, ingredients, rating, cookingMethod } = singleRecipe
+
+    const handleFavouriteBtn = () => {
+        toast.success('❤️ Added to Favourite List!');
+        setVisible(!visible)
+    }
     return (
         <Col>
             <Card>
@@ -35,7 +41,7 @@ const SingleRecipe = ({ singleRecipe }) => {
                         <span className='fs-3'>{rating}</span>
                         </div>
                     </Card.Text>
-                    <Button onClick={() => setVisible(!visible)} className={visible ? '' : 'disabled'} variant='dark'><FaHeart color={'#FFC107'} size={'2rem'}/></Button>
+                    <Button onClick={handleFavouriteBtn} className={visible ? '' : 'disabled'} variant='dark'><FaHeart color={'#FFC107'} size={'2rem'}/></Button>
                 </Card.Body>
             </Card>
         </Col>
