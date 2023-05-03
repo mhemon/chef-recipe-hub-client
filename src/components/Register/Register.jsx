@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Button, Container, FloatingLabel, Form } from 'react-bootstrap';
+import { Button, Container, FloatingLabel, Form, Spinner } from 'react-bootstrap';
 import SocialLogin from '../Shared/SocialLogin/SocialLogin';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
@@ -9,10 +9,12 @@ const Register = () => {
     const navigate = useNavigate()
     const [error, setError] = useState('')
     const [success, setSuccess] = useState('')
+    const [show, setShow] = useState(false)
 
     const {createUser} = useContext(AuthContext)
 
     const handleRegisterBtn = (e) => {
+        setShow(true)
         e.preventDefault()
         setError('')
         setSuccess('')
@@ -23,6 +25,7 @@ const Register = () => {
         const photoUrl = form.photoUrl.value
 
         if(password.length < 6){
+            setShow(false)
             setError("Error : password must be greater than 6")
             return
         }
@@ -31,10 +34,19 @@ const Register = () => {
         .then(result => {
             const currentUser = result.user
             updateProfile(currentUser, {displayName: name, photoURL: photoUrl})
-            .then(() => navigate('/'))
-            .catch(error => setError(error.code))
+            .then(() => {
+                setShow(false)
+                navigate('/')
+            })
+            .catch(error => {
+                setShow(false)
+                setError(error.code)
+            })
         })
-        .catch(error => setError("Error :-"+error.code))
+        .catch(error => {
+            setShow(false)
+            setError("Error :-"+error.code)
+        })
     }
     return (
         <Container className='mx-auto login-box mb-4'>
@@ -68,8 +80,18 @@ const Register = () => {
                     <Form.Control type="text" placeholder="Enter Photo URL" name='photoUrl' />
                 </FloatingLabel>
 
-                <Button className='mb-2 w-100' variant="warning" type="submit">
-                    Register
+                <Button className='mb-2 w-100' variant="warning" type="submit" disabled={show}>
+                    {!show ? 'Register' : <>
+                        <Spinner
+                            as="span"
+                            animation="grow"
+                            size="sm"
+                            role="status"
+                            aria-hidden="true"
+                        />
+                        Loading...
+                    </>
+                    }
                 </Button>
                 <br />
                 <Form.Text className="d-flex justify-content-center fw-semibold text-dark">

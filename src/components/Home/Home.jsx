@@ -1,5 +1,5 @@
-import React from 'react';
-import { Card, Col, Row } from 'react-bootstrap';
+import React, { useContext } from 'react';
+import { Card, Col, Row, Spinner } from 'react-bootstrap';
 import banner1 from '../../assets/banner01.jpg'
 import './Home.css'
 import { useLoaderData } from 'react-router-dom';
@@ -7,6 +7,7 @@ import SingleChef from '../Shared/SingleChef/SingleChef';
 
 const Home = () => {
     const chefData = useLoaderData()
+    
     return (
         <div className='container'>
             {/* banner section */}

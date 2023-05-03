@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Container } from 'react-bootstrap';
+import { Container, Spinner } from 'react-bootstrap';
 import { Button, FloatingLabel, Form } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Login.css'
@@ -9,15 +9,18 @@ import { toast } from 'react-toastify';
 
 const Login = () => {
     const location = useLocation()
-    const { loginUser, setLoading } = useContext(AuthContext)
+    const { loginUser } = useContext(AuthContext)
+
     const [error, setError] = useState('')
     const [success, setSuccess] = useState('')
+    const [show, setShow] = useState(false)
 
     const from = location.state?.from?.pathname || "/";
 
     const navigate = useNavigate()
-    
+
     const handleLoginBtn = (e) => {
+        setShow(true)
         e.preventDefault()
         setError('')
         setSuccess('')
@@ -26,11 +29,14 @@ const Login = () => {
         const password = form.password.value
 
         loginUser(email, password)
-        .then(() => navigate(from))
-        .catch(error => {
-            setLoading(false)
-            setError("Error: "+error.code)
-        })
+            .then(() => {
+                setShow(false)
+                navigate(from)
+            })
+            .catch(error => {
+                setShow(false)
+                setError("Error: " + error.code)
+            })
     }
 
     return (
@@ -42,15 +48,25 @@ const Login = () => {
                     label="Email"
                     className="mb-3"
                 >
-                    <Form.Control type="email" placeholder="name@example.com" name='email' required/>
+                    <Form.Control type="email" placeholder="name@example.com" name='email' required />
                 </FloatingLabel>
 
                 <FloatingLabel controlId="floatingPassword" label="Password" className='mb-3'>
-                    <Form.Control type="password" placeholder="Password" name='password' required/>
+                    <Form.Control type="password" placeholder="Password" name='password' required />
                 </FloatingLabel>
 
-                <Button className='mb-2 w-100' variant="warning" type="submit">
-                    Login
+                <Button className='mb-2 w-100' variant="warning" type="submit" disabled={show}>
+                    {!show ? 'Login' : <>
+                        <Spinner
+                            as="span"
+                            animation="grow"
+                            size="sm"
+                            role="status"
+                            aria-hidden="true"
+                        />
+                        Loading...
+                    </>
+                    }
                 </Button>
                 <br />
                 <Form.Text className="d-flex justify-content-center fw-semibold text-dark">
@@ -59,9 +75,9 @@ const Login = () => {
                 <Form.Text className="text-muted text-success">
                     {success}
                 </Form.Text>
-                <Form.Text className="text-danger">
-                <h4>{error}</h4>
-                </Form.Text>
+                {error && <Form.Text className="text-danger">
+                    <h4>{error}</h4>
+                </Form.Text>}
             </Form>
             {/* social login added here */}
             <hr />
