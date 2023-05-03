@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Card, Col, Row, Spinner } from 'react-bootstrap';
 import { useLoaderData } from 'react-router-dom';
 import SingleRecipe from '../Shared/SingleRecipe/SingleRecipe';
@@ -6,7 +6,10 @@ import SingleRecipe from '../Shared/SingleRecipe/SingleRecipe';
 const ChefRecipes = () => {
     const chefProfile = useLoaderData()
     const { id, picture, name, speciality,likes, numberOfRecipes, yearsOfExperience, bio, recipes } = chefProfile
-    console.log(recipes);
+    // change viewport to 0
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
     return (
         <div className='container'>
             {/* banner section */}

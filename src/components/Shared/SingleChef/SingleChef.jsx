@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Button, Card, Col } from 'react-bootstrap';
 import './SingleChef.css'
 import { Link } from 'react-router-dom';
+import LazyLoad from 'react-lazy-load';
 
 const SingleChef = ({ chef }) => {
-    const { id, name, picture , yearsOfExperience, numberOfRecipes, likes} = chef
+    const { id, name, picture, yearsOfExperience, numberOfRecipes, likes } = chef
     return (
         <Col>
             <Card style={{ width: '18rem' }}>
                 <div className='card-img'>
-                    <Card.Img className='img-fluid' variant="top" src={picture} />
+                    <LazyLoad height={200}>
+                        <Card.Img className='img-fluid' variant="top" src={picture} />
+                    </LazyLoad>
                 </div>
                 <Card.Body>
                     <Card.Title>{name}</Card.Title>

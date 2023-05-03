@@ -7,7 +7,7 @@ import SingleChef from '../Shared/SingleChef/SingleChef';
 
 const Home = () => {
     const chefData = useLoaderData()
-    
+
     return (
         <div className='container'>
             {/* banner section */}
@@ -47,7 +47,7 @@ const Home = () => {
                             <Card.Body>
                                 <Card.Title>Shami Kebab</Card.Title>
                                 <Card.Text className='text-justify'>
-                                Shami Kebab is a popular Kebab from Bangladeshi made with ground meat, lentils, and spices. It is typically served as an appetizer or snack.
+                                    Shami Kebab is a popular Kebab from Bangladeshi made with ground meat, lentils, and spices. It is typically served as an appetizer or snack.
                                 </Card.Text>
                             </Card.Body>
                         </Card>
@@ -60,7 +60,7 @@ const Home = () => {
                             <Card.Body>
                                 <Card.Title>Chicken Korma</Card.Title>
                                 <Card.Text className='text-justify'>
-                                Chicken Korma is a delicious, mild Bangladeshi dish made with tender chicken cooked in a creamy sauce of yogurt, coconut milk, and aromatic spices.
+                                    Chicken Korma is a delicious, mild Bangladeshi dish made with tender chicken cooked in a creamy sauce of yogurt, coconut milk, and aromatic spices.
                                 </Card.Text>
                             </Card.Body>
                         </Card>
@@ -73,7 +73,7 @@ const Home = () => {
                             <Card.Body>
                                 <Card.Title>Mutton Tehari</Card.Title>
                                 <Card.Text className='text-justify'>
-                                Mutton Tehari is a popular spicy rice dish in Bangladeshi cuisine, consisting of aromatic basmati rice cooked with tender mutton, aromatic spices, and vegetables.
+                                    Mutton Tehari is a popular spicy rice dish in Bangladeshi cuisine, consisting of aromatic basmati rice cooked with tender mutton, aromatic spices, and vegetables.
                                 </Card.Text>
                             </Card.Body>
                         </Card>
@@ -88,10 +88,10 @@ const Home = () => {
                 {/* items */}
                 <Row xs={1} md={2} className="g-4 py-2 mb-2">
                     <Col>
-                        <div className="card mb-3" style={{maxWidth: '540px', height: '190px', overflow: 'hidden'}}>
+                        <div className="card mb-3" style={{ maxWidth: '540px', height: '190px', overflow: 'hidden' }}>
                             <div className="row g-0">
                                 <div className="col-md-4">
-                                    <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" className="img-fluid rounded-start" alt="..."/>
+                                    <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" className="img-fluid rounded-start" alt="..." />
                                 </div>
                                 <div className="col-md-8">
                                     <div className="card-body">
@@ -104,10 +104,10 @@ const Home = () => {
                         </div>
                     </Col>
                     <Col>
-                        <div className="card mb-3" style={{maxWidth: '540px', height: '190px', overflow: 'hidden'}}>
+                        <div className="card mb-3" style={{ maxWidth: '540px', height: '190px', overflow: 'hidden' }}>
                             <div className="row g-0">
                                 <div className="col-md-4">
-                                    <img src="https://www.vegrecipesofindia.com/wp-content/uploads/2021/09/begun-bhaja-1.jpg" className="img-fluid rounded-start" alt="..."/>
+                                    <img src="https://www.vegrecipesofindia.com/wp-content/uploads/2021/09/begun-bhaja-1.jpg" className="img-fluid rounded-start" alt="..." />
                                 </div>
                                 <div className="col-md-8">
                                     <div className="card-body">
@@ -120,10 +120,10 @@ const Home = () => {
                         </div>
                     </Col>
                     <Col>
-                        <div className="card mb-3" style={{maxWidth: '540px', height: '190px', overflow: 'hidden'}}>
+                        <div className="card mb-3" style={{ maxWidth: '540px', height: '190px', overflow: 'hidden' }}>
                             <div className="row g-0">
                                 <div className="col-md-4">
-                                    <img src="https://foodiesterminal.com/wp-content/uploads/2019/04/Chingri-Macher-Malai-Curry-2.jpg" className="img-fluid rounded-start" alt="..."/>
+                                    <img src="https://foodiesterminal.com/wp-content/uploads/2019/04/Chingri-Macher-Malai-Curry-2.jpg" className="img-fluid rounded-start" alt="..." />
                                 </div>
                                 <div className="col-md-8">
                                     <div className="card-body">
@@ -136,10 +136,10 @@ const Home = () => {
                         </div>
                     </Col>
                     <Col>
-                        <div className="card mb-3" style={{maxWidth: '540px', height: '190px', overflow: 'hidden'}}>
+                        <div className="card mb-3" style={{ maxWidth: '540px', height: '190px', overflow: 'hidden' }}>
                             <div className="row g-0">
                                 <div className="col-md-4">
-                                    <img src="https://images.unsplash.com/photo-1594221708779-94832f4320d1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80" className="img-fluid rounded-start" alt="..."/>
+                                    <img src="https://images.unsplash.com/photo-1594221708779-94832f4320d1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80" className="img-fluid rounded-start" alt="..." />
                                 </div>
                                 <div className="col-md-8">
                                     <div className="card-body">
