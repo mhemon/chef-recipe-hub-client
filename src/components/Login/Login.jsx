@@ -5,9 +5,10 @@ import { Link, useNavigate } from 'react-router-dom';
 import './Login.css'
 import SocialLogin from '../Shared/SocialLogin/SocialLogin';
 import { AuthContext } from '../../provider/AuthProvider';
+import { toast } from 'react-toastify';
 
 const Login = () => {
-    const { loginUser } = useContext(AuthContext)
+    const { loginUser, setLoading } = useContext(AuthContext)
     const [error, setError] = useState('')
     const [success, setSuccess] = useState('')
     const navigate = useNavigate()
@@ -22,7 +23,10 @@ const Login = () => {
 
         loginUser(email, password)
         .then(() => navigate('/'))
-        .catch(error => setError(error.code))
+        .catch(error => {
+            setLoading(false)
+            setError("Error: "+error.code)
+        })
     }
 
     return (
@@ -51,8 +55,8 @@ const Login = () => {
                 <Form.Text className="text-muted text-success">
                     {success}
                 </Form.Text>
-                <Form.Text className="text-muted text-danger">
-                    {error}
+                <Form.Text className="text-danger">
+                <h4>{error}</h4>
                 </Form.Text>
             </Form>
             {/* social login added here */}

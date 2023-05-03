@@ -122,12 +122,12 @@ const Home = () => {
                         <div className="card mb-3" style={{maxWidth: '540px', height: '190px', overflow: 'hidden'}}>
                             <div className="row g-0">
                                 <div className="col-md-4">
-                                    <img src="https://images.unsplash.com/photo-1592691264539-3e7fbbe3f94a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" className="img-fluid rounded-start" alt="..."/>
+                                    <img src="https://foodiesterminal.com/wp-content/uploads/2019/04/Chingri-Macher-Malai-Curry-2.jpg" className="img-fluid rounded-start" alt="..."/>
                                 </div>
                                 <div className="col-md-8">
                                     <div className="card-body">
-                                        <h5 className="card-title">Spicy Garlic Shrimp</h5>
-                                        <p className="card-text mb-1">Spicy garlic shrimp is a delicious seafood dish made by sautéing fresh shrimp in garlic and chili flakes. It's packed with flavor and perfect served with rice.</p>
+                                        <h5 className="card-title">Chingri malai curry</h5>
+                                        <p className="card-text mb-1">Chingri malai curry or malai chingri, also known as prawn malai curry, is a Bengali curry made from tiger and king prawns and coconut milk and flavoured with spices.</p>
                                         <p className="card-text"><small className="text-body-secondary">Last updated 10 mins ago</small></p>
                                     </div>
                                 </div>

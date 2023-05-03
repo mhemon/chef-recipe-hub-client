@@ -9,17 +9,23 @@ import { AuthContext } from '../../../provider/AuthProvider';
 import Button from 'react-bootstrap/Button';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
+import { toast } from 'react-toastify';
 
 const NavBar = () => {
-    const { user } = useContext(AuthContext)
-    console.log(user);
-    console.log(user);
+    const { user, logout } = useContext(AuthContext)
+
+    const handleLogoutBtn = () => {
+        logout()
+        .then(() => toast.success('Logout Success'))
+        .catch(error => toast.error(error.code))
+    }
     
     const renderTooltip = (props) => (
         <Tooltip id="button-tooltip" {...props}>
-          {user.displayName}
+          {user?.displayName}
         </Tooltip>
       );
+
     return (
         <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
             <Container>
@@ -31,7 +37,7 @@ const NavBar = () => {
                 </Link>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className='ms-auto'>
+                    <Nav className='ms-auto d-flex align-items-center'>
                         <Nav.Link className='me-4'>
                             <NavLink to="/" className={({ isActive, isPending }) =>
                                 isPending ? "pending" : isActive ? "active" : "text-decoration-none text-black"}>
@@ -53,6 +59,10 @@ const NavBar = () => {
                                 >
                                     <img className='img-fluid navbar-pic rounded-pill' src={user?.photoURL} alt="" />
                                 </OverlayTrigger>
+                                <NavLink className={({ isActive, isPending }) =>
+                                    isPending ? "pending" : isActive ? "active" : "text-decoration-none text-black"}>
+                                    <button onClick={handleLogoutBtn} className='btn btn-danger ms-3'>Logout</button>
+                                </NavLink>
                             </div>
                                 : <NavLink to="/login" className={({ isActive, isPending }) =>
                                     isPending ? "pending" : isActive ? "active" : "text-decoration-none text-black"}>
