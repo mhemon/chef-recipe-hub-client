@@ -38,11 +38,11 @@ const Login = () => {
                     label="Email"
                     className="mb-3"
                 >
-                    <Form.Control type="email" placeholder="name@example.com" name='email' />
+                    <Form.Control type="email" placeholder="name@example.com" name='email' required/>
                 </FloatingLabel>
 
                 <FloatingLabel controlId="floatingPassword" label="Password" className='mb-3'>
-                    <Form.Control type="password" placeholder="Password" name='password' />
+                    <Form.Control type="password" placeholder="Password" name='password' required/>
                 </FloatingLabel>
 
                 <Button className='mb-2 w-100' variant="warning" type="submit">

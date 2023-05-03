@@ -5,7 +5,7 @@ import SingleRecipe from '../Shared/SingleRecipe/SingleRecipe';
 
 const ChefRecipes = () => {
     const chefProfile = useLoaderData()
-    const { id, picture, name, speciality, numberOfRecipes, yearsOfExperience, bio, recipes } = chefProfile
+    const { id, picture, name, speciality,likes, numberOfRecipes, yearsOfExperience, bio, recipes } = chefProfile
     console.log(recipes);
     return (
         <div className='container'>
@@ -20,6 +20,7 @@ const ChefRecipes = () => {
                             <h3 className='fst-italic'>{speciality}</h3>
                             <h1 className='chef-name text-warning'>{name}</h1>
                             <p className='text-muted justify-text'>{bio}</p>
+                            <h6>Number of Likes : {likes}</h6>
                             <h6>Number of Recipes : {numberOfRecipes}</h6>
                             <h6>Year of Experiences : {yearsOfExperience}</h6>
                         </div>

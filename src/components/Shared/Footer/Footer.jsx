@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Footer.css'
+import logoWhite from '../../../../public/logo_white.png'
 
 const Footer = () => {
     return (
@@ -9,7 +10,7 @@ const Footer = () => {
             <Container>
                 <Row className='py-3 mb-2'>
                     <Col md={6}>
-                        <img className='img-fluid footer-img-size' src="logo_white.png" alt="" />
+                        <img className='img-fluid footer-img-size' src={logoWhite} alt="" />
                         <h4>Chef's Recipe Hub</h4>
                         <p>Cook up something new with our expert recipes.</p>
                     </Col>

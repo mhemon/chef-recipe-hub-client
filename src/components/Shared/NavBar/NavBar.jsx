@@ -10,6 +10,7 @@ import Button from 'react-bootstrap/Button';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
 import { toast } from 'react-toastify';
+import logo from '../../../../public/logo.png'
 
 const NavBar = () => {
     const { user, logout } = useContext(AuthContext)
@@ -31,7 +32,7 @@ const NavBar = () => {
             <Container>
                 <Link className='text-decoration-none' to="/">
                     <Navbar.Brand className='d-flex align-items-center gap-2'>
-                        <img className='img-fluid img-size' src="logo.png" alt="" />
+                        <img className='img-fluid img-size' src={logo} alt="" />
                         <span className='text-black fw-semibold'>Chef's Recipe Hub</span>
                     </Navbar.Brand>
                 </Link>
