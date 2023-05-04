@@ -1,13 +1,23 @@
 import React from 'react';
-import { Accordion } from 'react-bootstrap';
+import { Accordion, Button } from 'react-bootstrap';
 import './Blog.css'
+import Pdf from "react-to-pdf";
+
 
 const Blog = () => {
+    const ref = React.createRef();
     return (
         <div className='container'>
             {/* Q & A section */}
+            <section className='text-center mt-2'>
+                <h3 className='mb-3'>Generate PDF of FAQ with One Click:</h3>
+                <Pdf targetRef={ref} filename="code-example.pdf">
+                    {({ toPdf }) => <button className='btn btn-warning' onClick={toPdf}>Generate Pdf</button>}
+                </Pdf>
+
+            </section>
             <section className='mx-auto responsive-width py-4'>
-                <Accordion defaultActiveKey="0">
+                <Accordion defaultActiveKey={['0']} alwaysOpen ref={ref}>
                     <Accordion.Item eventKey="0">
                         <Accordion.Header>Tell us the differences between uncontrolled and controlled components?</Accordion.Header>
                         <Accordion.Body>

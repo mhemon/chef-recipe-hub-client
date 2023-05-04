@@ -1,6 +1,11 @@
 .footer-img-size{
     width: 75px;
-    height: 70px;
+    height: 73px;
     padding-top: 5px;
     padding-bottom: 5px;
+}
+
+#email, #signup{
+    height: 40px;
+    padding: 0 10px;
 }
