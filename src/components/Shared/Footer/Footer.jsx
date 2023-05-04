@@ -1,10 +1,17 @@
 import React from 'react';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Container, Row, Col, Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Footer.css'
 import logoWhite from '../../../../public/logo_white.png'
+import { toast } from 'react-toastify';
 
 const Footer = () => {
+    const handleSignupBtn = (event) => {
+        event.preventDefault()
+        const email = event.target.email.value;
+        console.log(email);
+        event.target.reset()
+    }
     return (
         <footer className="bg-dark text-light">
             <Container>
@@ -25,10 +32,10 @@ const Footer = () => {
                     <Col md={3}>
                         <h4>Subscribe</h4>
                         <p>Register and get notified about all the news & updates before it gets too late.</p>
-                        <div className='d-flex align-items-center gap-2'>
-                            <input type="email" name="email" id="email" placeholder='your email address'/>
-                            <button id='signup' className='btn btn-warning'>Signup</button>
-                        </div>
+                        <Form onSubmit={handleSignupBtn} className='d-flex align-items-center gap-2'>
+                            <input type="email" name="email" id="email" placeholder='your email address' required/>
+                            <button id='signup' type='submit' className='btn btn-warning'>Signup</button>
+                        </Form>
                     </Col>
                 </Row>
                 <Row>
