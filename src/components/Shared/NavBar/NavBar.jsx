@@ -14,6 +14,7 @@ import logo from '../../../../public/logo.png'
 import LazyLoad from 'react-lazy-load';
 
 const NavBar = () => {
+    // get user credentials from context
     const { user, logout } = useContext(AuthContext)
 
     const handleLogoutBtn = () => {

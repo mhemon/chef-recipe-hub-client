@@ -2,7 +2,7 @@
 
 ## Features List
 
-[Website Live Link](https://web.facebook.com/?_rdc=1&_rdr)
+[Website Live Link](https://chef-s-recipe-hub.web.app)
 
 1. The website has feature recipes exclusively from Bangladeshi cuisine and provide chef's and recipes from Bangladesh.
 

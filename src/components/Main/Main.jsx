@@ -10,7 +10,7 @@ import { Spinner } from 'react-bootstrap';
 
 const Main = () => {
     const { loading } = useContext(AuthContext)
-
+    // show spinner when loading 
     if(loading){
         return <div className='d-flex align-items-center justify-content-center mt-5'>
             <Spinner animation="border" variant="warning" />
@@ -21,9 +21,10 @@ const Main = () => {
             <NavBar />
             <Outlet />
             <Footer />
+            {/* toast container */}
             <ToastContainer
                 position="top-right"
-                autoClose={5000}
+                autoClose={3000}
                 hideProgressBar={false}
                 newestOnTop={false}
                 closeOnClick

@@ -15,10 +15,11 @@ const Login = () => {
     const [success, setSuccess] = useState('')
     const [show, setShow] = useState(false)
 
+    // get user location to handle private routes
     const from = location.state?.from?.pathname || "/";
 
     const navigate = useNavigate()
-
+    // handle login btn clicked
     const handleLoginBtn = (e) => {
         setShow(true)
         e.preventDefault()
@@ -27,7 +28,7 @@ const Login = () => {
         const form = e.target
         const email = form.email.value
         const password = form.password.value
-
+        // firebase login 
         loginUser(email, password)
             .then(() => {
                 setShow(false)

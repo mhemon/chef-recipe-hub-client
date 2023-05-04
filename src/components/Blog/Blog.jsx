@@ -18,6 +18,7 @@ const Blog = () => {
             </section>
             <section className='mx-auto responsive-width py-4'>
                 <Accordion defaultActiveKey={['0']} alwaysOpen ref={ref}>
+                    {/* question no 1 */}
                     <Accordion.Item eventKey="0">
                         <Accordion.Header>Tell us the differences between uncontrolled and controlled components?</Accordion.Header>
                         <Accordion.Body>
@@ -25,6 +26,7 @@ const Blog = () => {
                             <span className='fw-semibold'>Uncontrolled components:- </span> on the other hand, uncontrolled components are those that are not directly managed by the developers of a system. These components may be external libraries, third-party APIs, or other software that is not directly under the control of the developers.
                         </Accordion.Body>
                     </Accordion.Item>
+                    {/* question no 2 */}
                     <Accordion.Item eventKey="1">
                         <Accordion.Header>How to validate React props using PropTypes?</Accordion.Header>
                         <Accordion.Body>
@@ -33,6 +35,7 @@ const Blog = () => {
                             To use PropTypes, import the library and declare a propTypes object within the component. The propTypes object should have keys that correspond to the props being passed, and their values should be set to the expected data type.
                         </Accordion.Body>
                     </Accordion.Item>
+                    {/* question no 3 */}
                     <Accordion.Item eventKey="2">
                         <Accordion.Header>Tell us the difference between nodejs and express js?</Accordion.Header>
                         <Accordion.Body>
@@ -43,6 +46,7 @@ const Blog = () => {
                             In short, Node.js is a platform for running JavaScript code on a server, while Express.js is a framework built on top of Node.js that provides additional features for building web applications.
                         </Accordion.Body>
                     </Accordion.Item>
+                    {/* question no 4 */}
                     <Accordion.Item eventKey="3">
                         <Accordion.Header>What is a custom hook, and why will you create a custom hook?</Accordion.Header>
                         <Accordion.Body>

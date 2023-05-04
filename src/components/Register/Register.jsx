@@ -12,7 +12,7 @@ const Register = () => {
     const [show, setShow] = useState(false)
 
     const {createUser} = useContext(AuthContext)
-
+    // handle register btn clicked
     const handleRegisterBtn = (e) => {
         setShow(true)
         e.preventDefault()
@@ -23,16 +23,18 @@ const Register = () => {
         const email = form.email.value
         const password = form.password.value
         const photoUrl = form.photoUrl.value
-
+        
+        // check password length
         if(password.length < 6){
             setShow(false)
             setError("Error : password must be greater than 6")
             return
         }
-
+        // firebase create user
         createUser(email, password)
         .then(result => {
             const currentUser = result.user
+            // update profile of this user
             updateProfile(currentUser, {displayName: name, photoURL: photoUrl})
             .then(() => {
                 setShow(false)

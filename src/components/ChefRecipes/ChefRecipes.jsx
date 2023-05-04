@@ -5,6 +5,7 @@ import SingleRecipe from '../Shared/SingleRecipe/SingleRecipe';
 
 const ChefRecipes = () => {
     const chefProfile = useLoaderData()
+    // destructure value from object
     const { id, picture, name, speciality,likes, numberOfRecipes, yearsOfExperience, bio, recipes } = chefProfile
     // change viewport to 0
     useEffect(() => {

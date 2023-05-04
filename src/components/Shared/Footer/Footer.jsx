@@ -6,10 +6,12 @@ import logoWhite from '../../../../public/logo_white.png'
 import { toast } from 'react-toastify';
 
 const Footer = () => {
+    // handle signup btn
     const handleSignupBtn = (event) => {
         event.preventDefault()
         const email = event.target.email.value;
         console.log(email);
+        toast.success('Subscribe Success!')
         event.target.reset()
     }
     return (
