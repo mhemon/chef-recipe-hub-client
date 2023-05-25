@@ -1,4 +1,4 @@
-# b7a10-chef-recipe-hunter-client-side-mhemon
+# chef-recipe-hub
 
 ## Features List
 
